@@ -1,0 +1,71 @@
+/* ============================================
+   BASE.CSS
+   ============================================ */
+
+  :root {
+    --bg: #080c14;
+    --bg2: #0d1420;
+    --bg3: #111c2e;
+    --card: #0f1a2b;
+    --card2: #132038;
+    --border: rgba(56,120,220,0.15);
+    --border2: rgba(56,120,220,0.25);
+    --accent: #3878dc;
+    --accent2: #5a9fff;
+    --accent3: #00d4aa;
+    --accent4: #f5a623;
+    --accent5: #e05c5c;
+    --text: #e8edf5;
+    --text2: #8fa4c4;
+    --text3: #4d6a90;
+    --glow: rgba(56,120,220,0.12);
+    --glow2: rgba(0,212,170,0.08);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+
+  /* NOISE TEXTURE */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.6;
+  }
+
+
+  /* GRID LINES */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(56,120,220,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(56,120,220,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+    z-index: 1;
+  }
+
